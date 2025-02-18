@@ -1,0 +1,42 @@
+/* Search Container */
+/* .search-autocomplete-container {
+  position: relative;
+  width: 100%;
+} */
+
+/* Input Field */
+.search-input {
+  margin: auto;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Suggestions Dropdown */
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Individual Suggestion */
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestions-list li:hover {
+  background: #f4f4f4;
+}

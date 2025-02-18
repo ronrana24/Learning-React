@@ -40,17 +40,17 @@
     transition: all 0.3s ease-in-out;
   }
   
-  button:nth-child(1) {
+  .btn-group button:nth-child(1) {
     background-color: #ffbe58;
     color: #000;
   }
   
-  button:nth-child(2) {
+  .btn-group button:nth-child(2) {
     background-color: #15306d;
     color: #fff;
   }
   
-  button:nth-child(3) {
+  .btn-group button:nth-child(3) {
     background-color: #ff4b5c;
     color: #fff;
   }

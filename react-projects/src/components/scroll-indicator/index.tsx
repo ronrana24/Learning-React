@@ -47,8 +47,6 @@ export default function ScrollIndicator({ url }: { url: string }) {
     };
   }, []);
 
-  console.log(scrollPercentage);
-
   if (loading === true) {
     return (
       <div className="loading-spinner">
