@@ -1,0 +1,70 @@
+.load-more-images-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of items to the next row */
+  gap: 16px; /* Adds spacing between items */
+}
+
+.image-container {
+  flex: 1 1 calc(25% - 16px); /* Ensures 4 items per row with gap accounted for */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  max-width: calc(25% - 16px); /* Limits the width to 25% minus the gap */
+}
+
+.image-container img {
+  width: 100%; /* Makes the image responsive within its container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Optional: Adds rounded corners to images */
+}
+
+.load-more-btn {
+  margin-top: 20px; /* Adds spacing above the button */
+  padding: 10px 20px; /* Adds padding to the button */
+  background-color: #007bff; /* Example button color */
+  color: white; /* Text color */
+  border: none; /* Removes border */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.loading-spinner {
+  text-align: center;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 images per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 images per row on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* 1 image per row on extra small screens */
+  }
+}

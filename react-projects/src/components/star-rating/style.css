@@ -1,0 +1,43 @@
+/* Container for Star Rating */
+.star-rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Heading Styling */
+.star-rating-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #15306d; /* Dark Blue */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Star Rating Box */
+.star-rating {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Active (Selected) Star */
+.active {
+  color: #ffbe58; /* Golden Yellow */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Inactive (Unselected) Star */
+.inactive {
+  color: #d3d3d3; /* Light Gray */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.star-rating svg:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
