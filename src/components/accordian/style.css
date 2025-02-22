@@ -1,0 +1,86 @@
+/* Wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  /* Multi-Selection Button */
+  .multi-select-btn {
+    background-color: #15306d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .multi-select-btn:hover {
+    background-color: #102a5b;
+  }
+  
+  /* Accordion */
+  .accordion {
+    width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Accordion Item */
+  .item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Title */
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .title:hover {
+    background: #f8f8f8;
+  }
+  
+  /* Plus Sign */
+  .title span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Rotate plus sign when expanded */
+  .title span.open {
+    transform: rotate(45deg);
+  }
+  
+  /* Content */
+  .content {
+    padding: 10px;
+    font-size: 16px;
+    color: #444;
+    background: #fafafa;
+    border-left: 4px solid #ffbe58;
+    margin-top: 5px;
+    transition: max-height 0.3s ease-in-out;
+    display: block;
+  }
+  
