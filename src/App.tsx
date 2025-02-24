@@ -9,7 +9,7 @@ import "./styles/style.css";
 import CurrencyConvertor from "./components/currency-convertor";
 import QrCode from "./components/qr-code";
 
-const projects = {
+const projects: { [key: string]: any } = {
   "Password Generator": PasswordGenarator,
   "Background Change": RandomColour,
   "Light and Dark Theme": LightDarkMode,
