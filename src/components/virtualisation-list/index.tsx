@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "../common/header";
 import useFetch from "../hooks/useFetch";
 import "./style.css";
