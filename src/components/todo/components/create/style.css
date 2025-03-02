@@ -1,0 +1,52 @@
+/* CreateTodo.css */
+
+.create-todo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ffbe58, #15306d);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    /* justify-content: center; */
+  }
+  
+  .create-todo-input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    transition: 0.3s ease-in-out;
+  }
+  
+  .create-todo-input::placeholder {
+    color: #888;
+  }
+  
+  .create-todo-input:focus {
+    background: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .create-todo-button {
+    background-color: #ffbe58;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #15306d;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .create-todo-container button {
+    margin-top: 0px;
+  }
+  

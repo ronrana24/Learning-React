@@ -8,6 +8,8 @@ import TicTacToe from "./components/tic-tac-toe";
 import "./styles/style.css";
 import CurrencyConvertor from "./components/currency-convertor";
 import QrCode from "./components/qr-code";
+import MiniContext from "./components/miniContext";
+import Todo from "./components/todo";
 
 const projects: { [key: string]: any } = {
   "Password Generator": PasswordGenarator,
@@ -17,6 +19,8 @@ const projects: { [key: string]: any } = {
   "Tic Tac Toe": TicTacToe,
   "Currency Convertor": CurrencyConvertor,
   "QR Generator": QrCode,
+  "Mini Context": MiniContext,
+  Todo: Todo,
 };
 
 function App() {
