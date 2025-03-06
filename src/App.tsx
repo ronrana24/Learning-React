@@ -10,6 +10,9 @@ import CurrencyConvertor from "./components/currency-convertor";
 import QrCode from "./components/qr-code";
 import MiniContext from "./components/miniContext";
 import Todo from "./components/todo";
+import ListVirtualization from "./components/virtualisation-list";
+import TaskNotification from "./components/task-notification";
+import OTP from "./components/otp";
 
 const projects: { [key: string]: any } = {
   "Password Generator": PasswordGenarator,
@@ -21,6 +24,9 @@ const projects: { [key: string]: any } = {
   "QR Generator": QrCode,
   "Mini Context": MiniContext,
   Todo: Todo,
+  "List Virtualization": ListVirtualization,
+  "Toast Notification": TaskNotification,
+  "Otp": OTP
 };
 
 function App() {

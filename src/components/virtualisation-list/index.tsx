@@ -1,40 +1,42 @@
-import Header from "../common/header";
+import { useState, useMemo, useCallback } from "react";
 import useFetch from "../hooks/useFetch";
+import Card from "./Card";
 import "./style.css";
 
-export default function VirtualizedList() {
-  const URL = "https://dummyjson.com/recipes";
-  const { data, error, loading } = useFetch(URL);
+const ITEM_HEIGHT = 340;
+const VIEWPORT_HEIGHT = 520;
+const BUFFER_ITEMS = 3; // Extra items to render before/after viewport
 
-//   const [index, setIndex] = useState([0, Math.floor(height/itemHeight)]) 400/
+export default function ListVirtualization() {
+  const [scrollTop, setScrollTop] = useState(0);
+  const { data, loading, error } = useFetch("https://dummyjson.com/recipes");
 
-  if (loading) {
-    return (
-      <div className="loading-spinner">
-        <p>Loading...</p>
-      </div>
+  const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
+    setScrollTop(e.currentTarget.scrollTop);
+  }, []);
+
+  const recipes = data?.recipes || [];
+
+  const { startIndex, endIndex } = useMemo(() => {
+    const startIndex = Math.max(0, Math.floor(scrollTop / ITEM_HEIGHT) - BUFFER_ITEMS);
+    const endIndex = Math.min(
+      recipes.length,
+      Math.floor((scrollTop + VIEWPORT_HEIGHT) / ITEM_HEIGHT) + BUFFER_ITEMS
     );
-  }
+    return { startIndex, endIndex };
+  }, [scrollTop, recipes]);
 
-  if (error) {
-    return <p className="error-message">{error.message}</p>;
-  }
+  if (loading) return <p>Loading recipes...</p>;
+  if (error) return <p>Error loading data.</p>;
+  if (!recipes.length) return <p>No recipes found.</p>;
 
   return (
-    <div className="virtualized-list-container">
-      <Header text="Virtualization List" />
-      <div className="list-container">
-        <div className="list-items">
-          {data && data.recipes.length > 0 ? (
-            data.recipes.map((item: any) => (
-              <div key={item.id} className="list-item">
-                <p>{item.name}</p>
-              </div>
-            ))
-          ) : (
-            <p>No data available</p>
-          )}
-        </div>
+    <div className="list-virtualization-container">
+      <h1 className="list-title">Virtualized Recipe List</h1>
+      <div className="recipe-list" onScroll={handleScroll}>
+        {recipes.slice(startIndex, endIndex).map((recipe) => (
+          <Card ingredients={recipe.ingredients} name={recipe.name} key={recipe.id} />
+        ))}
       </div>
     </div>
   );

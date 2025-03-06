@@ -1,81 +1,145 @@
-/* Container */
-.virtualized-list-container {
+.recipe-card-container {
+  background: linear-gradient(135deg, #ffbe58, #15306d);
+  color: #fff;
   padding: 20px;
-  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
   margin: auto;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px;
 }
 
-/* Header Styling */
-.virtualized-list-container h1 {
-  text-align: center;
+.recipe-card-container:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-title {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-/* List Container */
-.list-container {
-  max-height: 400px; /* Makes the list scrollable */
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  background: #f9f9f9;
-}
-
-/* List Items */
-.list-items {
+.ingredients-container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
-/* Individual List Item */
-.list-item {
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  color: #333;
-  transition: background 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.list-item:hover {
-  background: #f1f1f1;
-  cursor: pointer;
-}
-
-/* No Data Message */
-.list-container p {
-  text-align: center;
-  color: #777;
+/* Styling for individual ingredient tags */
+.tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 20px;
   font-size: 14px;
-  padding: 10px;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .virtualized-list-container {
+@media (max-width: 500px) {
+  .recipe-card-container {
     max-width: 90%;
+    padding: 16px;
   }
 
-  .list-item {
-    font-size: 14px;
+  .recipe-title {
+    font-size: 20px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }
 
-.loading-spinner {
+.tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.tag p {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+.list-virtualization-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffbe58, #15306d);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.list-title {
+  font-size: 28px;
   font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.error-message {
-  color: red;
-  text-align: center;
+/* Scrollable container for virtualized list */
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px; /* Limit height */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+/* Hide scrollbar but enable smooth scrolling */
+.recipe-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recipe-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.recipe-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .list-virtualization-container {
+    padding: 15px;
+  }
+
+  .list-title {
+    font-size: 22px;
+  }
 }
