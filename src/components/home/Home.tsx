@@ -36,6 +36,11 @@ export default function Home({
           </motion.li>
         ))}
       </motion.ol>
+      <div
+        style={{
+          marginTop: "2rem",
+        }}
+      ></div>
     </div>
   );
 }
