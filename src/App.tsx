@@ -13,6 +13,7 @@ import Todo from "./components/todo";
 import ListVirtualization from "./components/virtualisation-list";
 import TaskNotification from "./components/task-notification";
 import OTP from "./components/otp";
+import InteractiveShape from "./components/interactive-shape";
 
 const projects: { [key: string]: any } = {
   "Password Generator": PasswordGenarator,
@@ -26,7 +27,8 @@ const projects: { [key: string]: any } = {
   Todo: Todo,
   "List Virtualization": ListVirtualization,
   "Toast Notification": TaskNotification,
-  "Otp": OTP
+  Otp: OTP,
+  "Interactive Shape": InteractiveShape,
 };
 
 function App() {
